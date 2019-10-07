@@ -79,9 +79,9 @@ class _MulticastCanvas implements Canvas {
   final Canvas _screenshot;
 
   @override
-  void clipPath(Path path, { bool doAntiAlias = true }) {
-    _main.clipPath(path, doAntiAlias: doAntiAlias);
-    _screenshot.clipPath(path, doAntiAlias: doAntiAlias);
+  void clipPath(Path path, { ui.ClipOp clipOp = ui.ClipOp.intersect, bool doAntiAlias = true }) {
+    _main.clipPath(path, clipOp: clipOp, doAntiAlias: doAntiAlias);
+    _screenshot.clipPath(path, clipOp: clipOp, doAntiAlias: doAntiAlias);
   }
 
   @override
